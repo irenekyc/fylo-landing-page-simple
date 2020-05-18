@@ -1,0 +1,158 @@
+@media (min-width:766px){
+    h1{
+        font-size:2.5rem;
+    }
+    h4{
+        font-size:1.6rem;
+    }
+    h5{
+        font-size:1.5rem;
+    }
+    p, a{
+        font-size:1.2rem;
+    }
+    .intro{
+        &:before{
+            background: url('../images/bg-curve-desktop.svg') no-repeat;
+        }
+    }
+}
+
+@media (min-width:900px){
+    .hero{
+        @include FLEXBOX(center, center);
+        flex-direction: row-reverse;
+       
+
+        &-image{
+            flex:1;
+        }
+        &-intro{
+            flex:1;
+            padding: $subsession-padding;
+            text-align:left;
+
+            h1{
+                font-size: calc(50vw * 0.05);
+            }
+            p{
+                font-size: calc(50vw * 0.03);
+            }
+        }
+        &-cta{
+            padding-right:4%;
+            @include FLEXBOX(space-between, center);
+            flex-direction: row;
+            .email-field{
+                width:68%;
+                margin:0;
+            }
+            .btn{
+                width:30%;
+                line-height:40px;
+                padding:0;
+                margin:0;
+            }
+        }
+    }
+
+    .intro{
+        @include FLEXBOX(center,center);
+        flex-direction: row-reverse;
+        padding: $session-wrapper;
+        &-image{
+            padding:0;
+            flex:1;
+        }
+        &-intro{
+            padding:0;
+            flex:1;
+            .cta{
+                text-align:left;
+            }
+            h5{
+                font-size:18px;
+                text-align: left;
+            }
+            p{
+                font-size:12px;
+            }
+            .testimonials{
+                max-width:375px;
+                padding:1.5rem;
+            }
+        }
+    }
+    .call-for-action{
+        @include FLEXBOX(space-between, flex-start);
+        padding:$session-wrapper;
+        &-intro{
+            width:55%;
+            text-align: left;;
+            h4{
+                font-size:1.2rem;
+                margin:0;
+            }
+            p{
+                font-size:0.9rem;
+            }
+        }
+        .cta-cta{
+            width:40%;
+            padding:0;
+            text-align: left;
+            .btn{
+                width:200px;
+                margin-left:0;
+                margin-right:auto;
+            }
+        }
+    }
+    footer{
+        display:grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        grid-template-areas: 'logo logo logo'
+        'contact ul1 ul2';
+
+        svg{
+            height:100px;
+            grid-area: logo;
+            margin:0;
+        }
+        .contact{
+            grid-area: contact;
+            padding:0;
+        
+        }
+        .nav-1{
+            grid-area: ul1;
+            margin:0;
+        }
+        .nav-2{
+            grid-area: ul2;
+            margin:0;
+        }
+    }  
+}
+
+@media (min-width:1280px){
+
+    .intro{
+        h5{
+            font-size:1.5rem;
+           
+        }
+        p{
+            font-size:1rem;
+        }
+    }
+    .call-for-action{
+        h4{
+            font-size:1.5rem;
+      
+        }
+        p{
+            font-size:1rem;
+        }
+    }
+}

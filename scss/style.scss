@@ -1,0 +1,237 @@
+@import 'variables';
+@import 'mixins';
+@import 'utilities';
+
+html{
+    scroll-behavior: smooth;
+    overflow-y:scroll;
+}
+
+body{
+    background: white;
+    color: $primary-main;
+    font-family: $main-font;
+    width:100vw;
+}
+
+*{
+    padding: 0;
+    margin:0;
+    box-sizing: border-box;
+}
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: $primary-dark;
+}
+
+button{
+    border:none;
+    outline:none;
+    font-family: $main-font;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+}
+
+/******************NAV BAR *****************/
+nav{
+    @include FLEXBOX(space-between, center);
+    width:100%;
+    padding:$session-wrapper;
+    font-family: $heading-font;
+
+    .logo{
+        width:30%;
+        max-width:200px;
+    }
+
+    .nav-links{
+        @include FLEXBOX(space-between, center);
+        width:60%;
+        max-width: 300px;
+
+        a{
+            color: $primary-dark;
+        }
+    }
+
+}
+
+/******************** HERO ********************/
+.hero{
+    padding: $session-wrapper;
+    &-image{
+        padding: $subsession-padding;
+        img{
+            width:100%;
+        } 
+    }
+    &-intro{
+        padding: $subsession-padding;
+        text-align: center;
+        color: $primary-dark;
+    }
+    &-cta{
+        @include FLEXBOX(center, center);
+        flex-direction: column;
+        padding: $subsession-padding;
+
+        .email-field{
+            width:100%;
+            height: 40px;
+            padding: 8px 16px;
+            border: 1px solid $primary-dark;
+            border-radius: 5px;
+            outline:none;
+            background: transparent;
+            margin-bottom: 1rem;
+        }
+        .btn{
+            width:100%;
+            font-size:0.9rem;
+            
+        }
+    }
+}
+
+/******************** INTRO ********************/
+.intro{
+    background: $main-lighter;
+    position: relative;
+    &:before{
+        position: absolute;
+        content:"";
+        width:100%;
+        height:100px;
+        background: url('../images/bg-curve-mobile.svg') no-repeat;
+        background-position:bottom center;
+        top:-100px;
+        left:0;
+    }
+
+    &-image{
+        padding: $session-wrapper;
+        img{
+            width:100%;
+        }
+    }
+    &-intro{
+        padding: $session-wrapper;
+
+        h5{
+            text-align: center;
+            margin-bottom:1rem;
+        }
+        .cta{
+            display:block;
+            margin-top:2rem;
+            margin-bottom:2rem;
+
+            a{
+                @include FLEXBOX (center, center);
+                span{
+                    font-size:14px;
+                    padding:0.5rem;
+                    color: $main-complement;
+                    border-bottom: 1px solid $main-complement;
+                }
+                img{
+                    height:14px;
+                }
+            }
+        }
+        .testimonials{
+            background:white;
+            padding: $session-wrapper;
+            border-radius: 5px;
+            font-size:12px;
+            color: $primary-dark;
+
+            .profile{
+                margin-top:1rem;
+                display:grid;
+                grid-template-columns: 50px 1fr;
+                grid-template-rows: 20px 20px;
+                grid-template-areas: 'profile name'
+                'profile title';
+
+                img{
+                    grid-area: profile;
+                    height:40px;
+                    width:40px;
+                    border-radius: 50%;
+                }
+                #name{
+                    grid-area: name;
+                    font-size:10px;
+                    line-height:20px;
+                }
+                #title{
+                    grid-area: title;
+                    font-size:10px;
+                    line-height:20px;
+                    color: $primary-main;
+                }
+            }
+        }
+    }
+}
+/********************** CALL FOR ACTION **********************/
+.call-for-action{
+    background: $primary-main;
+    color:white;
+    text-align: center;
+    padding: $session-wrapper-n;
+    h4, p{
+        margin-bottom:1rem;
+    }
+   .email-field{
+    width:100%;
+    height: 40px;
+    padding: 8px 16px;
+    outline:none;
+    background: white;
+    margin-bottom:0.5rem;
+    border-radius:5px;
+    border:none;
+   }
+   .btn{
+       width:100%;
+   }
+}
+
+/************************FOOTER **********************/
+footer{
+    background: $primary-dark;
+    padding: $session-wrapper;
+    color:white;
+    svg{
+        *{
+            fill: white;}
+    }
+    .contact{
+        padding: $subsession-padding;
+        p{
+            margin-bottom: 0.5rem;
+            @include FLEXBOX(flex-start, center);
+            img{
+                margin-right:1rem;
+            }
+        }
+    }
+    ul{
+        margin-bottom: 2rem;
+        a{
+            color: white;
+        }
+       li{
+           margin-bottom:0.5rem;
+       }
+    }
+}
+
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
